@@ -4,7 +4,7 @@ KERNELDIR=$(pwd)
 
 # Identity
 CODENAME=Hayzel
-KERNELNAME=TheOneMemory
+KERNELNAME=TOM
 VARIANT=EAS
 VERSION=CLO
 
@@ -46,8 +46,9 @@ KERNEL_DEFCONFIG=X00TD_defconfig
 ANYKERNEL3_DIR=$KERNELDIR/AnyKernel3/
 TZ=Asia/Jakarta
 DATE=$(date '+%Y%m%d')
+DATE2=$(date '+%Y%m%d-%H%M')
 BUILD_START=$(date +"%s")
-FINAL_KERNEL_ZIP="$KERNELNAME-$VERSION-$VARIANT-$(date '+%Y%m%d-%H%M')"
+FINAL_KERNEL_ZIP="$KERNELNAME-$VERSION-$VARIANT-$DATE"
 KERVER=$(make kernelversion)
 export PATH="$KERNELDIR/trb_clang/bin:$PATH"
 export ARCH=arm64
@@ -62,8 +63,8 @@ MAKE="./makeparallel"
 # Java
 command -v java > /dev/null 2>&1
 
-mkdir -p out
-make O=out clean
+#mkdir -p out
+#make O=out clean
 
 make $KERNEL_DEFCONFIG O=out 2>&1 | tee -a error.log
 make -j$(nproc --all) O=out LLVM=1 \

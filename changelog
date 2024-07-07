@@ -1,8 +1,10 @@
-<b><#selectbg_g>Jul 04,2024</#></b>
+<b><#selectbg_g>Jul 07,2024</#></b>
 
   <*> Bringup TheOneMemory EAS</*>
-  <*> Introduce SBalance IRQ balancer</*>
+  <*> Disable a HMP-specific function</*>
+  <*> Drop WireGuard support</*>
   <*> Enable SRANDOM</*>
+  <*> Introduce SBalance IRQ balancer</*>
   <*> More Changes, and Improvements</*>
 
 
